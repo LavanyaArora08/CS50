@@ -3,29 +3,30 @@
 
 int main(void)
 {
-    int start,end;
+    int start=0,end=0;
     // TODO: Prompt for start size
+    int ss;   //a variable for start_size
     do
     {
-        start = get_int("Enter start size ");
-    }while(start<9);
-    printf("Start number is %d \n",start);
-
+        ss = get_int("Start Size: ");
+    }
+    while (ss < 9);
     // TODO: Prompt for end size
+    int es;    //a variable for end_size
     do
     {
-        end = get_int("enter end size ");
-    }while(end<start);
-    printf("end number is %d \n",start);
+        es = get_int("End Size: ");
+    }
+    while (es < ss);
 
     // TODO: Calculate number of years until we reach threshold
-    int years=0, population = start;
-    while(population!=end)
+    int years = 0;
+    while (ss < es)
     {
-        population = population + (population/3) - (population/4);
-        years+=1;
+        ss = ss + (ss / 3)-(ss / 4);
+        years++;
     }
 
     // TODO: Print number of years
-    printf("The number of years is: %d\n",years);
+    printf("Years: %d\n",years);
 }
